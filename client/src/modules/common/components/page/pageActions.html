@@ -1,0 +1,19 @@
+<div class="x_content">
+	<ng-container *ngFor="let item of model.items">
+		<form-button *ngIf="item.type!=PageActionItemType.Dropdown" label="{{i18nHelper.resolve(item.key)}}" (onClick)=item.handler($event)></form-button>
+
+		<form-dropdown-button *ngIf="item.type==PageActionItemType.Dropdown" label="{{i18nHelper.resolve(item.key)}}" [items]=item.items></form-dropdown-button>
+	</ng-container>
+	<!--<button *ngIf="model.default.hasValue" id="{{model.default.id}}" data-toggle="dropdown" class="btn btn-default" type="button"
+		aria-expanded="false" (click)="onActionItemClicked(model.default)">{{i18nHelper.resolve(model.default.key)}}</button>
+
+	<button *ngIf="!model.default.hasValue" id="{{model.default.id}}" data-toggle="dropdown" class="btn btn-default dropdown-toggle"
+		type="button" aria-expanded="false">
+        {{i18n.common.page.action}}<span class="caret"></span>
+    </button>
+	<ul role="menu" class="dropdown-menu" *ngIf="!model.default.hasValue">
+		<li *ngFor="let action of model.items" attr.data-key="{{action.key}}" (click)="onActionItemClicked(action)" onclick="return false;">
+			<a href="#" id="{{action.id}}">{{i18nHelper.resolve(action.key)}}</a>
+		</li>
+	</ul>-->
+</div>

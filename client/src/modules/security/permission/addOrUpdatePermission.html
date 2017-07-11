@@ -1,0 +1,23 @@
+<page>
+	<page-header>
+		{{i18n.security.addOrUpdatePermission.title}}
+	</page-header>
+	<page-content>
+		<horizontal-form>
+			<form-text-input [labelText]=i18n.security.addOrUpdatePermission.name [placeHolderText]=i18n.security.addOrUpdatePermission.inputName
+				[validation]="['security.addOrUpdatePermission.validation.nameIsRequired','security.addOrUpdatePermission.validation.nameAlreadyExisted']"
+				[(model)]=model.name>
+			</form-text-input>
+			<form-text-input [labelText]=i18n.security.addOrUpdatePermission.key [placeHolderText]=i18n.security.addOrUpdatePermission.inputKey
+				[validation]="['security.addOrUpdatePermission.validation.keyIsRequire','security.addOrUpdatePermission.validation.keyAlreadyExisted','security.addOrUpdatePermission.validation.keyShouldNotHaveWhiteSpace']"
+				[(model)]=model.key>
+			</form-text-input>
+			<form-textarea [labelText]=i18n.security.addOrUpdatePermission.desc [placeHolderText]=i18n.security.addOrUpdatePermission.inputDesc
+				[(model)]=model.description>
+			</form-textarea>
+			<!--<parameters [(model)]=model.parameters></parameters>-->
+			<form-primary-button (onClick)="onSaveClicked($event)" [label]="i18n.common.form.save"></form-primary-button>
+			<form-default-button (onClick)="onCancelClicked($event)" [label]="i18n.common.form.cancel"></form-default-button>
+		</horizontal-form>
+	</page-content>
+</page>

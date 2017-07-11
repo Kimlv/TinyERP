@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{312FF91A-E794-44D8-B532-A2C7D7877992}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App.Test.Console</RootNamespace>
+    <AssemblyName>App.Test.Console</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Aggregate\App.Aggregate.csproj">
+      <Project>{3fc40c0d-a53f-4507-94d8-e99aee04ae29}</Project>
+      <Name>App.Aggregate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Command.Impl\App.Command.Impl.csproj">
+      <Project>{d225f4f9-c042-4be0-ae3a-277799cfcfa6}</Project>
+      <Name>App.Command.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Command\App.Command.csproj">
+      <Project>{ce75dc9e-ff91-4a55-8174-b07e4a7bdcde}</Project>
+      <Name>App.Command</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Context\App.Context.csproj">
+      <Project>{31f025ba-25f0-45ee-907e-afef5b46e77d}</Project>
+      <Name>App.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Entity\App.Entity.csproj">
+      <Project>{75767a70-cd8b-4f27-ae4b-45be7c3209ac}</Project>
+      <Name>App.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.EventHandler.Impl\App.EventHandler.Impl.csproj">
+      <Project>{88e69dca-9a93-4245-8176-310c771496ec}</Project>
+      <Name>App.EventHandler.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.EventHandler\App.EventHandler.csproj">
+      <Project>{ba0a5a0e-655d-4dbd-ab5a-f3209fd4a053}</Project>
+      <Name>App.EventHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Event\App.Event.csproj">
+      <Project>{6aa214af-9650-4c32-aca2-a4b0bc625289}</Project>
+      <Name>App.Event</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.IntegrationTest\App.IntegrationTest.csproj">
+      <Project>{830fcc5f-011f-402a-81b3-47843edc5725}</Project>
+      <Name>App.IntegrationTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Repository.Impl\App.Repository.Impl.csproj">
+      <Project>{c17cf1e1-9b4e-4b53-9493-d2f39ee31a45}</Project>
+      <Name>App.Repository.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Repository\App.Repository.csproj">
+      <Project>{44db0641-ef31-4a87-bde5-fb32a2b6a170}</Project>
+      <Name>App.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.Service.Impl\App.Service.Impl.csproj">
+      <Project>{67b29bb8-6aeb-48ee-9328-a4199943fd6a}</Project>
+      <Name>App.Service.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.Common\App.Common.csproj">
+      <Project>{fa3eaa76-30ec-41fd-b9b1-c46158b9e821}</Project>
+      <Name>App.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

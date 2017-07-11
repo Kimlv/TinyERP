@@ -1,0 +1,29 @@
+{
+    "menuTitle":"Security",
+    "permissions": {
+        "menuTitle":"Permissions",
+        "title": "Permissions",
+        "addNewAction": "Add Permission",
+        "grid": {
+            "name": "Name",
+            "key": "Key",
+            "description": "Description"
+        }
+    },
+    "addOrUpdatePermission": {
+        "title": "Add Permission",
+        "name": "Name",
+        "inputName": "Please input name",
+        "key": "key",
+        "inputKey": "Please input key",
+        "desc": "Description",
+        "inputDesc": "Please input description",
+        "validation": {
+            "nameIsRequired": "Please input name",
+            "nameAlreadyExisted": "This name is already existed. Please input another name",
+            "keyIsRequired": "Please input key",
+            "keyAlreadyExisted": "This key is already existed. Please input another key",
+            "keyShouldNotHaveWhiteSpace": "The key should not have white space"
+        }
+    }
+}
