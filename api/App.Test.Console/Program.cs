@@ -2,7 +2,7 @@
 {
     using App.Common.Event;
     using App.Common.Helpers;
-    using App.Event.Order;
+    using App.Order.Event;
     using System;
     using System.Collections.Generic;
     class Program

@@ -3,15 +3,12 @@
     using App.Entity.Security;
     using System.Data.Entity;
     using App.Common;
-    using App.Entity.Security;
     using App.Entity.ProductManagement;
     using App.Entity.Common;
     using App.Entity.Store;
     using App.Entity.Setting;
     using App.Entity.Support;
     using App.Entity.Inventory;
-    using Aggregate.Order;
-    using ValueObject.Order;
 
     public class AppDbContext : App.Common.Data.MSSQL.MSSQLDbContext
     {

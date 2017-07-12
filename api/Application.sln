@@ -114,6 +114,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Security.EventHandler",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Security.EventHandler.Impl", "App.Security.EventHandler.Impl\App.Security.EventHandler.Impl.csproj", "{6890B222-5149-4F69-A1F9-D881301FF963}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{D9E36C8E-9E44-4CB0-B73F-92D602CB0358}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Order", "App.Order.Api\App.Order.csproj", "{401987E1-3109-4E38-BC81-ECD026E926BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -296,6 +300,10 @@ Global
 		{6890B222-5149-4F69-A1F9-D881301FF963}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6890B222-5149-4F69-A1F9-D881301FF963}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6890B222-5149-4F69-A1F9-D881301FF963}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401987E1-3109-4E38-BC81-ECD026E926BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401987E1-3109-4E38-BC81-ECD026E926BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401987E1-3109-4E38-BC81-ECD026E926BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401987E1-3109-4E38-BC81-ECD026E926BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -344,5 +352,6 @@ Global
 		{520AA57E-0C62-4A36-AE40-29AE11FC346F} = {D86CB721-1FEF-4222-8D89-0FB9EED9E293}
 		{9422E121-62BC-4A20-B918-B31B7AE38934} = {D86CB721-1FEF-4222-8D89-0FB9EED9E293}
 		{6890B222-5149-4F69-A1F9-D881301FF963} = {D86CB721-1FEF-4222-8D89-0FB9EED9E293}
+		{401987E1-3109-4E38-BC81-ECD026E926BE} = {D9E36C8E-9E44-4CB0-B73F-92D602CB0358}
 	EndGlobalSection
 EndGlobal

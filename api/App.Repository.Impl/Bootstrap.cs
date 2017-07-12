@@ -23,8 +23,7 @@
             context.RegisterTransient<App.Repository.Inventory.IUnitOfMeasurementRepository, App.Repository.Impl.Inventory.UnitOfMeasurementRepository>();
 
             /*Order */
-            context.RegisterTransient<App.Repository.Order.IOrderRepository, App.Repository.Impl.Order.OrderRepository>();
-
+            //context.RegisterTransient<App.Repository.Order.IOrderRepository, App.Repository.Impl.Order.OrderRepository>();
         }
     }
 }

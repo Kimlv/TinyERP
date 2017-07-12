@@ -1,14 +1,15 @@
 ﻿namespace App.Order.Api
 {
-    using Command.Order;
     using App.Common.Command;
     using App.Common.MVC.Attributes;
     using System.Web.Http;
-    using Aggregate.Order;
     using System;
     using System.Collections.Generic;
-    using Query.Order;
     using App.Common.DI;
+    using App.Order.Aggregate;
+    using App.Query.Order;
+    using App.Order.Query;
+    using App.Order.Command;
 
     /// <summary>
     /// See https://github.com/techcoaching/TinyERP/issues/77 to understand why this handles both query and command action
