@@ -21,9 +21,22 @@
 
         public IResponseData<TResponse> Post<TRequest, TResponse>(string uri, TRequest data)
         {
-            using (HttpClient client = this.CreateHttpClient(Configuration.Current.IntegrationTest.BaseUrl))
+            Uri url = new Uri(uri);
+            string baseUrl = string.Format("{0}://{1}:{2}", url.Scheme, url.Host, url.Port);
+            using (HttpClient client = this.CreateHttpClient(baseUrl))
             {
                 HttpContent content = new JsonContent<TRequest>(data);
+                HttpResponseMessage responseMessage = client.PostAsync(uri, content).Result;
+                IResponseData<TResponse> result = this.GetResponseAs<ResponseData<TResponse>>(responseMessage.Content);
+                return result;
+            }
+        }
+
+        public IResponseData<TResponse> Post<TResponse>(string uri, string data)
+        {
+            using (HttpClient client = this.CreateHttpClient(Configuration.Current.IntegrationTest.BaseUrl))
+            {
+                HttpContent content = new JsonContent<string>(data);
                 HttpResponseMessage responseMessage = client.PostAsync(uri, content).Result;
                 IResponseData<TResponse> result = this.GetResponseAs<ResponseData<TResponse>>(responseMessage.Content);
                 return result;

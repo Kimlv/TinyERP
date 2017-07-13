@@ -9,6 +9,7 @@
         public override void Execute(IBaseContainer context)
         {
             context.RegisterTransient<IBusEventRepository, BusEventRepository>();
+            context.RegisterTransient<IEventSubcriberRepository, EventSubcriberRepository>();
         }
     }
 }

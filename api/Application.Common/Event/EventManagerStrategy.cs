@@ -3,28 +3,31 @@
     using App.Common.Configurations;
     using Configurations.EventHandler;
     using Strategy;
+    using System.Collections.Generic;
 
     public class EventManagerStrategy : IEventManagerStrategy
     {
         public void Publish<TEventType>(TEventType ev) where TEventType : IEvent
         {
-            IEventHandlerStrategy strategy = this.GetStrategyHandler<TEventType>(ev);
-            strategy.Publish<TEventType>(ev);
+            IList<IEventHandlerStrategy> strategies = this.GetStrategiesHandler<TEventType>(ev);
+            foreach (IEventHandlerStrategy strategy in strategies)
+            {
+                strategy.Publish<TEventType>(ev);
+            }
         }
 
-        private IEventHandlerStrategy GetStrategyHandler<TEventType>(TEventType ev) where TEventType : IEvent
+        private IList<IEventHandlerStrategy> GetStrategiesHandler<TEventType>(TEventType ev) where TEventType : IEvent
         {
+            IList<IEventHandlerStrategy> strategies = new List<IEventHandlerStrategy>();
+            strategies.Add(new InAppEventHandlerStategy());
+
             string className = ev.GetType().FullName;
             EventHandlerOption option = Configuration.Current.EventHandlers[className];
-            EventHandlerStategyType type = option == null ? EventHandlerStategyType.InApp : option.Type;
-            switch (type)
+            if (option != null && option.Type == EventHandlerStategyType.External)
             {
-                case EventHandlerStategyType.External:
-                    return new ExternalEventHandlerStategy();
-                case EventHandlerStategyType.InApp:
-                default:
-                    return new InAppEventHandlerStategy();
+                strategies.Add(new ExternalEventHandlerStategy());
             }
+            return strategies;
         }
     }
 }

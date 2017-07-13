@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9AE8C3CB-ADC9-486F-AA75-7167B262AD40}</ProjectGuid>
+    <ProjectGuid>{F1E58435-C562-4148-899C-673F3C6E1BC2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>App.MessageBus.Repository</RootNamespace>
-    <AssemblyName>App.MessageBus.Repository</AssemblyName>
+    <RootNamespace>App.MessageBus.EventHandler.Impl</RootNamespace>
+    <AssemblyName>App.MessageBus.EventHandler.Impl</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,17 +40,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBusEventRepository.cs" />
-    <Compile Include="IEventSubcriberRepository.cs" />
+    <Compile Include="BusEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App.MessageBus.Aggragate\App.MessageBus.Aggregate.csproj">
-      <Project>{70b4c5d3-79ff-4320-a157-b367a4533ef1}</Project>
+      <Project>{70B4C5D3-79FF-4320-A157-B367A4533EF1}</Project>
       <Name>App.MessageBus.Aggregate</Name>
     </ProjectReference>
+    <ProjectReference Include="..\App.MessageBus.EventHandler\App.MessageBus.EventHandler.csproj">
+      <Project>{8cb0565e-4ade-4989-9d1c-a9fe952dd0bb}</Project>
+      <Name>App.MessageBus.EventHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.MessageBus.Event\App.MessageBus.Event.csproj">
+      <Project>{6f02b95c-883c-4e92-a2f0-8fa3144b9625}</Project>
+      <Name>App.MessageBus.Event</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.MessageBus.Repository\App.MessageBus.Repository.csproj">
+      <Project>{9AE8C3CB-ADC9-486F-AA75-7167B262AD40}</Project>
+      <Name>App.MessageBus.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Application.Common\App.Common.csproj">
-      <Project>{fa3eaa76-30ec-41fd-b9b1-c46158b9e821}</Project>
+      <Project>{FA3EAA76-30EC-41FD-B9B1-C46158B9E821}</Project>
       <Name>App.Common</Name>
     </ProjectReference>
   </ItemGroup>

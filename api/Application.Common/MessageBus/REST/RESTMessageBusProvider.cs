@@ -12,7 +12,7 @@
         }
         public void Send(MessageBusEvent eventItem)
         {
-            string url = Configuration.Current.MessageBus.BaseUri;
+            string url =string.Format("{0}/{1}",Configuration.Current.MessageBus.BaseUri, "/api/busevents");
             /// Will handle response later
             IResponseData<CreateMessageBusEventResponse> response = this.connector.Post<MessageBusEvent, CreateMessageBusEventResponse>(url, eventItem);
         }

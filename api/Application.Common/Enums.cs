@@ -253,4 +253,9 @@
         public const string Security = "Security";
         public const string Order = "Order";
     }
+    [Flags]
+    public enum BusEventSubcriberStatus {
+        Active,
+        InActive
+    }
 }

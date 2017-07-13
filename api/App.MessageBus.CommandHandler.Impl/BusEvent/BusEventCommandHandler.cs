@@ -22,6 +22,7 @@
                 Repository.IBusEventRepository repo = IoC.Container.Resolve<Repository.IBusEventRepository>(uow);
                 repo.Add(aggregate);
                 uow.Commit();
+                aggregate.PublishEvents();
             }
         }
 

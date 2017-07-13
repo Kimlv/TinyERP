@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap.cs" />
     <Compile Include="BusEventRepository.cs" />
+    <Compile Include="EventSubcriberRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

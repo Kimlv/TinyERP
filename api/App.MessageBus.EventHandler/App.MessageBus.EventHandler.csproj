@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9AE8C3CB-ADC9-486F-AA75-7167B262AD40}</ProjectGuid>
+    <ProjectGuid>{8CB0565E-4ADE-4989-9D1C-A9FE952DD0BB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>App.MessageBus.Repository</RootNamespace>
-    <AssemblyName>App.MessageBus.Repository</AssemblyName>
+    <RootNamespace>App.MessageBus.EventHandler</RootNamespace>
+    <AssemblyName>App.MessageBus.EventHandler</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,17 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBusEventRepository.cs" />
-    <Compile Include="IEventSubcriberRepository.cs" />
+    <Compile Include="IBusEventHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\App.MessageBus.Aggragate\App.MessageBus.Aggregate.csproj">
-      <Project>{70b4c5d3-79ff-4320-a157-b367a4533ef1}</Project>
-      <Name>App.MessageBus.Aggregate</Name>
+    <ProjectReference Include="..\App.MessageBus.Event\App.MessageBus.Event.csproj">
+      <Project>{6F02B95C-883C-4E92-A2F0-8FA3144B9625}</Project>
+      <Name>App.MessageBus.Event</Name>
     </ProjectReference>
     <ProjectReference Include="..\Application.Common\App.Common.csproj">
-      <Project>{fa3eaa76-30ec-41fd-b9b1-c46158b9e821}</Project>
+      <Project>{FA3EAA76-30EC-41FD-B9B1-C46158B9E821}</Project>
       <Name>App.Common</Name>
     </ProjectReference>
   </ItemGroup>
