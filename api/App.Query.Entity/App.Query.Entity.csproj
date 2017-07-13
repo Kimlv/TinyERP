@@ -49,10 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Order\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Order\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App.ValueObject\App.ValueObject.csproj">
       <Project>{d778351f-f028-41bd-b17c-3e38a868dd4d}</Project>
