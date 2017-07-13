@@ -16,12 +16,12 @@
             IEventSubcriberRepository subcriberRepo = IoC.Container.Resolve<IEventSubcriberRepository>();
 
             IList<EventSubcriber> subcribers = subcriberRepo.GetAllActive(ev.Key);
-            IConnector connector = IoC.Container.Resolve<IConnector>();
+            IConnector connector = ConnectorFactory.Create(Common.ConnectorType.REST);
             foreach (EventSubcriber subcriber in subcribers)
             {
                 try
                 {
-                    //connector.Post<object>(subcriber.Uri, ev.Content);
+                    connector.Post<object>(subcriber.Uri, ev.Content);
                     logger.Info("'{0}' was sent to '{1}' at '{2}' with parameters '{3}'", ev.Key, subcriber.Uri, DateTime.UtcNow, ev.Content);
                 }
                 catch (Exception ex)

@@ -40,10 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="EventSubcriberService.cs" />
     <Compile Include="MessageBusEventService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\App.MessageBus.Aggragate\App.MessageBus.Aggregate.csproj">
+      <Project>{70b4c5d3-79ff-4320-a157-b367a4533ef1}</Project>
+      <Name>App.MessageBus.Aggregate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.MessageBus.Repository\App.MessageBus.Repository.csproj">
+      <Project>{9ae8c3cb-adc9-486f-aa75-7167b262ad40}</Project>
+      <Name>App.MessageBus.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\App.MessageBus.Service\App.MessageBus.Service.csproj">
       <Project>{73C88B07-40DE-445D-B01A-B601E64486FC}</Project>
       <Name>App.MessageBus.Service</Name>

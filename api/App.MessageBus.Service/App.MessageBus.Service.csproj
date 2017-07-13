@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventSubcriber\IEventSubcriberService.cs" />
+    <Compile Include="EventSubcriber\RegisterEventSubcriber.cs" />
     <Compile Include="IMessageBusEventService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

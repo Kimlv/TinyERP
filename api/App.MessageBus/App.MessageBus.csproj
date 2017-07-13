@@ -161,6 +161,7 @@
   <ItemGroup>
     <Compile Include="Common\Bootstrap.cs" />
     <Compile Include="Common\DbContextResolver.cs" />
+    <Compile Include="Controllers\EventSubcribersController.cs" />
     <Compile Include="Controllers\MessageBusEventsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
