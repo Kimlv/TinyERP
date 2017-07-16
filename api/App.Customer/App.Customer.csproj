@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{401987E1-3109-4E38-BC81-ECD026E926BE}</ProjectGuid>
+    <ProjectGuid>{24271C9D-4783-47AD-BA52-CF78F4A81923}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>App.Order</RootNamespace>
-    <AssemblyName>App.Order</AssemblyName>
+    <RootNamespace>App.Customer</RootNamespace>
+    <AssemblyName>App.Customer</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,21 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Bson">
-      <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Bson.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Driver">
-      <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Driver.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Kennedy">
-      <HintPath>..\packages\MongoDB.Kennedy.Concurrency.1.0.12\lib\MongoDB.Kennedy.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Http">
@@ -59,42 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aggregate\OrderAggregate.cs" />
-    <Compile Include="Api\OrderHandler.cs" />
-    <Compile Include="Command\ActivateOrder.cs" />
-    <Compile Include="Command\AddOrderLineRequest.cs" />
-    <Compile Include="Command\Bootstrap.cs" />
-    <Compile Include="Command\CreateOrderRequest.cs" />
-    <Compile Include="Command\IOrderCommandHandler.cs" />
-    <Compile Include="Command\OrderCommandHandler.cs" />
-    <Compile Include="Command\OrderDetail.cs" />
-    <Compile Include="Command\OrderLine.cs" />
-    <Compile Include="Context\OrderDbContext.cs" />
-    <Compile Include="Event\Bootstrap.cs" />
-    <Compile Include="Event\IOrderEventHandler.cs" />
-    <Compile Include="Event\OrderEventHandler.cs" />
-    <Compile Include="Query\Entity\Order.cs" />
+    <Compile Include="Api\CustomerHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Query\Bootstrap.cs" />
-    <Compile Include="Query\IOrderQuery.cs" />
-    <Compile Include="Query\OrderQuery.cs" />
-    <Compile Include="Query\OrderSummary.cs" />
-    <Compile Include="Query\OrderSummaryItem.cs" />
-    <Compile Include="Repository\Bootstrap.cs" />
-    <Compile Include="Repository\IOrderRepository.cs" />
-    <Compile Include="Repository\OrderRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Aggregate\" />
+    <Folder Include="Event\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App.Order.Event\App.Order.Event.csproj">
       <Project>{9d29115b-2ebb-40c2-beac-cf2cefcd3a14}</Project>
       <Name>App.Order.Event</Name>
     </ProjectReference>
-    <ProjectReference Include="..\App.ValueObject\App.ValueObject.csproj">
-      <Project>{d778351f-f028-41bd-b17c-3e38a868dd4d}</Project>
-      <Name>App.ValueObject</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Application.Common\App.Common.csproj">
-      <Project>{fa3eaa76-30ec-41fd-b9b1-c46158b9e821}</Project>
+      <Project>{FA3EAA76-30EC-41FD-B9B1-C46158B9E821}</Project>
       <Name>App.Common</Name>
     </ProjectReference>
   </ItemGroup>
