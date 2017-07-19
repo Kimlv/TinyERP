@@ -52,6 +52,10 @@
     <Compile Include="Migrations\201706100821264_add-busevent-model.Designer.cs">
       <DependentUpon>201706100821264_add-busevent-model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707190812425_add-eventsubcriber.cs" />
+    <Compile Include="Migrations\201707190812425_add-eventsubcriber.Designer.cs">
+      <DependentUpon>201707190812425_add-eventsubcriber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706100821264_add-busevent-model.resx">
       <DependentUpon>201706100821264_add-busevent-model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707190812425_add-eventsubcriber.resx">
+      <DependentUpon>201707190812425_add-eventsubcriber.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

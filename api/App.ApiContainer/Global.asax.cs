@@ -12,6 +12,11 @@
             throw new System.InvalidOperationException("Please specify type of application");
         }
 
+        public override void Init()
+        {
+            base.Init();
+            this.application.OnApplicationInitialized();
+        }
         protected void Application_Start()
         {
             this.application.OnApplicationStarted();

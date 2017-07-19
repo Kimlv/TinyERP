@@ -11,5 +11,13 @@
                 return (string)this["baseUri"];
             }
         }
+
+        public string RegisterEventSubciberUri
+        {
+            get
+            {
+                return string.Format("{0}/api/eventsubcribers", this.BaseUri);
+            }
+        }
     }
 }

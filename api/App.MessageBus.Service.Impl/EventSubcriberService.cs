@@ -7,6 +7,7 @@
     using App.MessageBus.Aggregate;
     using App.Common.Validation;
     using App.Common.Helpers;
+    using App.Common.Event;
 
     internal class EventSubcriberService : IEventSubcriberService
     {

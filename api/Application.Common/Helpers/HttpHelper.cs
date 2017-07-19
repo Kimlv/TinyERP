@@ -1,6 +1,8 @@
 ﻿namespace App.Common.Helpers
 {
+    using System;
     using System.Web;
+    using App.Common.Tasks;
 
     public class HttpHelper
     {
@@ -24,6 +26,11 @@
         public static void Redirect(string url, bool endResponse)
         {
             HttpContext.Current.Response.Redirect(url, endResponse);
+        }
+
+        internal static string GetRootUri(HttpApplication app)
+        {
+            return app.Request.Url.Host;
         }
 
         public static string Resolve(string url)

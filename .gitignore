@@ -10,3 +10,4 @@ client/src/**/*.js
 client/dist/
 api/.vs/config/applicationhost.config
 **/logs/log.txt
+deployment/messagebus/

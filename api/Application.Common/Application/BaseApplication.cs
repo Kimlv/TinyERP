@@ -1,5 +1,6 @@
 ﻿namespace App.Common.Application
 {
+    using System;
     using App.Common.Helpers;
     using App.Common.Tasks;
 
@@ -48,6 +49,12 @@
         {
             TaskArgument<IApp> taskArg = new TaskArgument<IApp>(app, this.Type);
             AssemblyHelper.ExecuteTasks<IConfigAppTask<TaskArgument<IApp>>, TaskArgument<IApp>>(taskArg, true);
+        }
+
+        public void OnApplicationInitialized()
+        {
+            TaskArgument<TContext> taskArg = new TaskArgument<TContext>(this.Context, this.Type);
+            AssemblyHelper.ExecuteTasks<IApplicationInitializedTask<TaskArgument<TContext>>, TaskArgument<TContext>>(taskArg, true);
         }
     }
 }

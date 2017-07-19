@@ -148,11 +148,16 @@
     <Compile Include="Data\DbContextOption.cs" />
     <Compile Include="Data\IDbContextResolver.cs" />
     <Compile Include="Data\IBaseQueryRepository.cs" />
+    <Compile Include="Event\EventRegistration.cs" />
+    <Compile Include="Event\RegisterEventSubcriber.cs" />
     <Compile Include="Event\RemoteEventSubcriberHandler.cs" />
     <Compile Include="Event\Strategy\ExternalEventHandlerStategy.cs" />
+    <Compile Include="Event\SubcriberEventRequest.cs" />
+    <Compile Include="Helpers\EventHelper.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Extensions\ObjectExtension.cs" />
     <Compile Include="Helpers\SecurityHelper.cs" />
+    <Compile Include="Helpers\UriHelper.cs" />
     <Compile Include="IClonable.cs" />
     <Compile Include="Mapping\ICustomMap.cs" />
     <Compile Include="Mapping\IMappingRegistration.cs" />
@@ -256,6 +261,7 @@
     <Compile Include="Providers\MultipartFormDataMemoryStreamProvider.cs" />
     <Compile Include="Tasks\CORS\ConfigCORS.cs" />
     <Compile Include="Tasks\EventSubcriber\RegisterRemoteEventSubcriberTask.cs" />
+    <Compile Include="Tasks\IApplicationInitializedTask.cs" />
     <Compile Include="Tasks\IExecutable.cs" />
     <Compile Include="Tasks\IConfigAppTask.cs" />
     <Compile Include="Tasks\IUnOrderExecutable.cs" />

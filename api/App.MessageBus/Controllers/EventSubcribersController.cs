@@ -1,6 +1,7 @@
 ﻿namespace App.MessageBus.Controllers
 {
     using App.Common.DI;
+    using App.Common.Event;
     using App.Common.MVC;
     using App.MessageBus.Service.EventSubcriber;
     using System.Web.Http;

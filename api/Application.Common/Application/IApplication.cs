@@ -2,6 +2,7 @@
 {
     public interface IApplication
     {
+        void OnApplicationInitialized();
         void OnApplicationStarted();
         void OnApplicationRequestStarted();
         void OnApplicationRequestEnded();

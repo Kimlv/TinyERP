@@ -292,6 +292,10 @@
       <Project>{31f025ba-25f0-45ee-907e-afef5b46e77d}</Project>
       <Name>App.Context</Name>
     </ProjectReference>
+    <ProjectReference Include="..\App.Customer\App.Customer.csproj">
+      <Project>{24271c9d-4783-47ad-ba52-cf78f4a81923}</Project>
+      <Name>App.Customer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\App.Entity\App.Entity.csproj">
       <Project>{75767a70-cd8b-4f27-ae4b-45be7c3209ac}</Project>
       <Name>App.Entity</Name>
