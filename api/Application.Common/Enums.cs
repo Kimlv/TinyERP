@@ -39,7 +39,7 @@
         UnitTest = 8,
         IntegraitonTest = 16,
         ExternalWebApi = 32,
-        MessageBus=64,
+        MessageBus = 64,
         All = 127
     }
 
@@ -254,8 +254,14 @@
         public const string Order = "Order";
     }
     [Flags]
-    public enum BusEventSubcriberStatus {
+    public enum BusEventSubcriberStatus
+    {
         Active,
         InActive
+    }
+
+    public class ConnectionStrings
+    {
+        public static readonly string DefaultMessageBus = "DefaultMessageBus";
     }
 }

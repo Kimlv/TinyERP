@@ -83,6 +83,9 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="Selenium.WebDriverBackedSelenium">
       <HintPath>..\packages\Selenium\2.53.1\Selenium.WebDriverBackedSelenium.dll</HintPath>
     </Reference>
@@ -132,6 +135,7 @@
     <Compile Include="Aggregate\BaseAggregateRoot.cs" />
     <Compile Include="Aggregate\IBaseAggregateRoot.cs" />
     <Compile Include="Application\ApplicationFactory.cs" />
+    <Compile Include="Application\BaseWebApiApplication.cs" />
     <Compile Include="Application\ExternalWebApiApplication.cs" />
     <Compile Include="Authorize\IAuthorization.cs" />
     <Compile Include="Authorize\IUserLoginAuthorization.cs" />
@@ -143,6 +147,7 @@
     <Compile Include="Configurations\Aggregate\AggregatesElement.cs" />
     <Compile Include="Configurations\MessageBusElement.cs" />
     <Compile Include="Configurations\RepositoryElement.cs" />
+    <Compile Include="Configurations\SettingElement.cs" />
     <Compile Include="Data\Context\BaseDbContextResolver.cs" />
     <Compile Include="Data\DbContextFactory.cs" />
     <Compile Include="Data\DbContextOption.cs" />

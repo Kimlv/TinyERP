@@ -4,6 +4,11 @@
     using System;
     public abstract class BaseDbContextResolver : IDbContextResolver
     {
+        protected string DefaultConnectionString { get; private set; }
+        public BaseDbContextResolver(string connectionName = "")
+        {
+            this.DefaultConnectionString = connectionName;
+        }
         public IDbContext Resolve(DbContextOption option)
         {
             if (option.DbContextType != null)

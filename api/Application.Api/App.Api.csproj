@@ -276,10 +276,6 @@
       <Project>{3fc40c0d-a53f-4507-94d8-e99aee04ae29}</Project>
       <Name>App.Aggregate</Name>
     </ProjectReference>
-    <ProjectReference Include="..\App.ApiContainer\App.ApiContainer.csproj">
-      <Project>{0a4b68f8-ede8-4726-8b7f-32ace5167045}</Project>
-      <Name>App.ApiContainer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\App.Command.Impl\App.Command.Impl.csproj">
       <Project>{d225f4f9-c042-4be0-ae3a-277799cfcfa6}</Project>
       <Name>App.Command.Impl</Name>

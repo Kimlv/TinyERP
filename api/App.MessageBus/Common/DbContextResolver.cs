@@ -4,18 +4,28 @@
     using App.Common;
     using App.Common.Data;
     using App.MessageBus.Context.BusEvent;
+    using App.Common.Data.Context;
 
-    public class DbContextResolver : IDbContextResolver
+    public class DbContextResolver : BaseDbContextResolver
     {
-        public IDbContext Resolve(DbContextOption option)
+        public DbContextResolver() : base(ConnectionStrings.DefaultMessageBus)
         {
-            switch (option.RepositoryType)
-            {
-                case RepositoryType.MSSQL:
-                    return new MessageBusDbContext(option.IOMode, connectionName: option.ConnectionStringName);
-                default:
-                    throw new InvalidOperationException("common.errors.unsupportedTyeOdDbContext");
-            }
         }
+        protected override IDbContext CreateDefaultDbContext(DbContextOption option)
+        {
+            string connectionStringName = string.IsNullOrWhiteSpace(option.ConnectionStringName) ? this.DefaultConnectionString : option.ConnectionStringName;
+            return new MessageBusDbContext(option.IOMode, connectionName: connectionStringName);
+        }
+        //public override IDbContext Resolve(DbContextOption option)
+        //{
+        //    switch (option.RepositoryType)
+        //    {
+        //        case RepositoryType.MSSQL:
+        //            string connectionStringName = string.IsNullOrWhiteSpace(option.ConnectionStringName) ? this.DefaultConnectionString : option.ConnectionStringName;
+        //            return new MessageBusDbContext(option.IOMode, connectionName: connectionStringName);
+        //        default:
+        //            throw new InvalidOperationException("common.errors.unsupportedTyeOdDbContext");
+        //    }
+        //}
     }
 }

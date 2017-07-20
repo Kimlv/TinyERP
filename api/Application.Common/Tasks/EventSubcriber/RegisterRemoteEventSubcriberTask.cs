@@ -1,5 +1,6 @@
 ﻿namespace App.Common.Tasks.EventSubcriber
 {
+    using App.Common.Configurations;
     using App.Common.Connector;
     using App.Common.DI;
     using App.Common.Event;
@@ -18,7 +19,7 @@
         {
             if (!this.IsValid(arg.Type)) { return; }
             ILogger logger = IoC.Container.Resolve<ILogger>();
-            string baseUri = "http://localhost:22383/";// HttpHelper.GetRootUri(arg.Data);
+            string baseUri = Configuration.Current.Setting.BaseUri ;
             IList<Type> handlers = AssemblyHelper.GetTypes<RemoteEventSubcriberHandler>().ToList();
             IList<EventRegistration> registrations = EventHelper.GetSubcriberRequests(handlers);
             IConnector restConnector = ConnectorFactory.Create(ConnectorType.REST);

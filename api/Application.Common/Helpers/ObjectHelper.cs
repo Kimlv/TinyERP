@@ -28,7 +28,7 @@
 
         internal static string GetClassName<TEventType>(TEventType ev) where TEventType : IEvent
         {
-            return typeof(TEventType).FullName;
+            return ev == null ? String.Empty : ev.GetType().FullName;
         }
 
         internal static TEntity CreateInstance<TEntity>() where TEntity : class

@@ -181,10 +181,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\App.ApiContainer\App.ApiContainer.csproj">
-      <Project>{0a4b68f8-ede8-4726-8b7f-32ace5167045}</Project>
-      <Name>App.ApiContainer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\App.MessageBus.Aggragate\App.MessageBus.Aggregate.csproj">
       <Project>{70B4C5D3-79FF-4320-A157-B367A4533EF1}</Project>
       <Name>App.MessageBus.Aggregate</Name>

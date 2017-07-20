@@ -2,19 +2,14 @@
 namespace App.Api
 {
     using App.Common;
-    using Owin;
+    using App.Common.Application;
 
-    public class WebApiApplication : App.ApiContainer.ApiApplication
+    public class WebApiApplication : BaseWebApiApplication
     {
         public WebApiApplication() : base() { }
         protected override ApplicationType GetApplicationType()
         {
             return ApplicationType.WebApi;
-        }
-
-        public void Configuration(IAppBuilder app)
-        {
-            this.Config<IAppBuilder>(app);
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿namespace App.MessageBus
 {
     using App.Common;
-    public class WebApiApplication : App.ApiContainer.ApiApplication
+    using App.Common.Application;
+
+    public class WebApiApplication : BaseWebApiApplication
     {
         public WebApiApplication() : base() { }
         protected override ApplicationType GetApplicationType()

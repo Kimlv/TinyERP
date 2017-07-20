@@ -20,6 +20,14 @@
             }
         }
 
+        [ConfigurationProperty("settings")]
+        public App.Common.Configurations.SettingElement Setting
+        {
+            get
+            {
+                return (App.Common.Configurations.SettingElement)this["settings"];
+            }
+        }
         [ConfigurationProperty("messageBus")]
         public MessageBusElement MessageBus
         {
