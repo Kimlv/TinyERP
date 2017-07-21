@@ -34,7 +34,9 @@
 
         public IResponseData<TResponse> Post<TResponse>(string uri, string data)
         {
-            using (HttpClient client = this.CreateHttpClient(Configuration.Current.IntegrationTest.BaseUrl))
+            Uri url = new Uri(uri);
+            string baseUrl = string.Format("{0}://{1}:{2}", url.Scheme, url.Host, url.Port);
+            using (HttpClient client = this.CreateHttpClient(baseUrl))
             {
                 HttpContent content = new JsonContent<string>(data);
                 HttpResponseMessage responseMessage = client.PostAsync(uri, content).Result;
@@ -74,6 +76,7 @@
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(baseUrl);
             client.DefaultRequestHeaders.Accept.Clear();
+            //client.DefaultRequestHeaders..Add(new MediaTypeWithQualityHeaderValue("application/json"));
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             return client;
         }

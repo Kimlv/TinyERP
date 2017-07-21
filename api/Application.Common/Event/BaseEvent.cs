@@ -1,8 +1,11 @@
 ﻿namespace App.Common.Event
 {
+    using Newtonsoft.Json;
     using System;
+
     public class BaseEvent : IEvent
     {
+        [JsonIgnore()]
         public virtual Type HandlerType
         {
             get

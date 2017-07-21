@@ -56,10 +56,6 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -196,6 +192,14 @@
     <ProjectReference Include="..\App.MessageBus.Context\App.MessageBus.Context.csproj">
       <Project>{cb314f62-be82-4303-aa09-1958decd42c9}</Project>
       <Name>App.MessageBus.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.MessageBus.EventHandler.Impl\App.MessageBus.EventHandler.Impl.csproj">
+      <Project>{f1e58435-c562-4148-899c-673f3c6e1bc2}</Project>
+      <Name>App.MessageBus.EventHandler.Impl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\App.MessageBus.EventHandler\App.MessageBus.EventHandler.csproj">
+      <Project>{8cb0565e-4ade-4989-9d1c-a9fe952dd0bb}</Project>
+      <Name>App.MessageBus.EventHandler</Name>
     </ProjectReference>
     <ProjectReference Include="..\App.MessageBus.Event\App.MessageBus.Event.csproj">
       <Project>{6f02b95c-883c-4e92-a2f0-8fa3144b9625}</Project>

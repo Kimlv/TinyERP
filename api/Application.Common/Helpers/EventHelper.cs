@@ -13,8 +13,8 @@
             IList<EventRegistration> requests = new List<EventRegistration>();
             foreach (Type handler in handlers)
             {
-                string baseUri = UriHelper.GetBaseUri(handler);
-                IList<EventRegistration> requestsOfHandler = EventHelper.GetSubcriberRequests(baseUri, handler);
+                string handlerPrefix = UriHelper.GetBaseUri(handler);
+                IList<EventRegistration> requestsOfHandler = EventHelper.GetSubcriberRequests(handlerPrefix, handler);
                 requests = requests.Concat(requestsOfHandler).ToList();
             }
             return requests;
@@ -28,6 +28,11 @@
                     method.GetParameters().FirstOrDefault().ParameterType.FullName,
                     ((RouteAttribute)method.GetCustomAttributes(typeof(RouteAttribute), true).FirstOrDefault()).Template
 
+                ))
+                .ToList();
+            registrations = registrations.Select(item => new EventRegistration(
+                item.EventClassName,
+                String.Format("{0}/{1}", baseUri, item.Uri)
                 ))
                 .ToList();
             return registrations;

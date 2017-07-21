@@ -21,7 +21,7 @@
             {
                 try
                 {
-                    connector.Post<object>(subcriber.Uri, ev.Content);
+                    connector.Post<bool>(subcriber.Uri, ev.Content);
                     logger.Info("'{0}' was sent to '{1}' at '{2}' with parameters '{3}'", ev.Key, subcriber.Uri, DateTime.UtcNow, ev.Content);
                 }
                 catch (Exception ex)
