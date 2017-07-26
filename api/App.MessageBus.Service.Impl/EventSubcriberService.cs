@@ -8,6 +8,7 @@
     using App.Common.Validation;
     using App.Common.Helpers;
     using App.Common.Event;
+    using App.Common.DI;
 
     internal class EventSubcriberService : IEventSubcriberService
     {
@@ -26,6 +27,12 @@
         private void ValidateRegisterEventSubcriberRequest(RegisterEventSubcriber request)
         {
             IValidationException validationException = ValidationHelper.Validate(request);
+
+            IEventSubcriberRepository repo = IoC.Container.Resolve<IEventSubcriberRepository>();
+            if (repo.GetItem(request.Key, request.Uri) != null)
+            {
+                validationException.Add(new ValidationError("messagebus.eventSubscriber.eventKeyAlreadyExsited"));
+            }
             validationException.ThrowIfError();
         }
     }

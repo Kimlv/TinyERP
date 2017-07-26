@@ -5,6 +5,7 @@
     using App.MessageBus.Aggregate;
     using System.Linq;
     using App.Common;
+    using System;
 
     internal class EventSubcriberRepository : BaseCommandRepository<EventSubcriber>, IEventSubcriberRepository
     {
@@ -14,6 +15,11 @@
         public IList<EventSubcriber> GetAllActive(string key)
         {
             return this.DbSet.AsQueryable().Where(item => item.Key == key && item.Status == BusEventSubcriberStatus.Active).ToList();
+        }
+
+        public EventSubcriber GetItem(string key, string uri)
+        {
+            return this.DbSet.AsQueryable().FirstOrDefault(item => item.Key == key && item.Uri == uri);
         }
     }
 }

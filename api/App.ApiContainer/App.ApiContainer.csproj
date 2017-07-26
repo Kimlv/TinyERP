@@ -141,6 +141,7 @@
     </Content>
     <Content Include="config\configuration.debug.config" />
     <Content Include="config\configuration.release.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

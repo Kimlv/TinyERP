@@ -7,5 +7,6 @@
     public interface IEventSubcriberRepository : IBaseCommandRepository<App.MessageBus.Aggregate.EventSubcriber>
     {
         IList<EventSubcriber> GetAllActive(string key);
+        EventSubcriber GetItem(string key, string uri);
     }
 }
