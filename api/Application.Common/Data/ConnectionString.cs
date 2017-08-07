@@ -10,12 +10,12 @@
         public int Port { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public DatabaseType DbType { get; set; }
+        public RepositoryType DbType { get; set; }
         public ConnectionString()
         {
         }
 
-        public ConnectionString(DatabaseType dbtype, string connectionName = "")
+        public ConnectionString(RepositoryType dbtype, string connectionName = "")
         {
             System.Console.WriteLine(Configurations.Configuration.Current.Databases.Count);
             App.Common.Configurations.ConnectionStringElement connectionString = Configurations.Configuration.Current.Databases.ToList().Where(item => item.DbType == dbtype && ((string.IsNullOrWhiteSpace(connectionName) && item.IsDefault) || item.Name == connectionName)).FirstOrDefault();

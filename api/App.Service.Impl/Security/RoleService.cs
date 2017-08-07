@@ -11,11 +11,13 @@
     using App.Common.Validation;
     using System.Linq;
     using App.Common.Helpers;
+    using App.Common.Configurations;
+
     internal class RoleService : IRoleService
     {
         public void CreateIfNotExist(IList<Role> roles)
         {
-            using (App.Common.Data.IUnitOfWork uow = new App.Common.Data.UnitOfWork(RepositoryType.MSSQL))
+            using (App.Common.Data.IUnitOfWork uow = UnitOfWorkFactory.Create(Configuration.Current.Repository.DefaultConnectionStringName))
             {
                 IRoleRepository roleRepository = IoC.Container.Resolve<IRoleRepository>(uow);
                 foreach (Role role in roles)

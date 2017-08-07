@@ -12,12 +12,13 @@
     using App.Common.Validation;
     using Service.Security.Permission;
     using App.Common.Helpers;
+    using App.Common.Configurations;
 
     internal class PermissionService : IPermissionService
     {
         public void CreateIfNotExist(IList<CreatePermissionRequest> pers)
         {
-            using (App.Common.Data.IUnitOfWork uow = new App.Common.Data.UnitOfWork(RepositoryType.MSSQL))
+            using (App.Common.Data.IUnitOfWork uow = UnitOfWorkFactory.Create(Configuration.Current.Repository.DefaultConnectionStringName))
             {
                 IPermissionRepository perRepository = IoC.Container.Resolve<IPermissionRepository>(uow);
                 foreach (CreatePermissionRequest perRequest in pers)

@@ -3,7 +3,7 @@
     public class MSSQLConnectionString : ConnectionString
     {
         public MSSQLConnectionString(string connectionName = "")
-            : base(DatabaseType.MSSQL, connectionName)
+            : base(RepositoryType.MSSQL, connectionName)
         {
             this.Port = 1433;
         }

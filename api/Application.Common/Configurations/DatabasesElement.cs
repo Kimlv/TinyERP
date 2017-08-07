@@ -149,11 +149,11 @@
         }
 
         [ConfigurationProperty("dbType")]
-        public DatabaseType DbType
+        public RepositoryType DbType
         {
             get
             {
-                return (DatabaseType)this["dbType"];
+                return (RepositoryType)this["dbType"];
             }
         }
 

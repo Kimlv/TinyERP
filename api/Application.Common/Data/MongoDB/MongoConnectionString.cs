@@ -3,7 +3,7 @@
     public class MongoConnectionString : ConnectionString
     {
         public MongoConnectionString(string connectionName = "")
-            : base(DatabaseType.MongoDB, connectionName)
+            : base(RepositoryType.MongoDb, connectionName)
         {
         }
         public override string ToString()

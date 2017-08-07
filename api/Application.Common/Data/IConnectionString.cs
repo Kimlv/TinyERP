@@ -8,6 +8,6 @@
         int Port { get; set; }
         string UserName { get; set; }
         string Password { get; set; }
-        DatabaseType DbType { get; set; }
+        RepositoryType DbType { get; set; }
     }
 }

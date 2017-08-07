@@ -6,7 +6,7 @@
     {
         public RepositoryType RepositoryType { get; protected set; }
         public IDbContext Context { get; private set; }
-        public UnitOfWork(RepositoryType repoType) : this(new DbContextOption(IOMode.Write, repoType)) { }
+        public UnitOfWork(RepositoryType repoType, string connectionString = "") : this(new DbContextOption(IOMode.Write, repoType, connectionString)) { }
         internal UnitOfWork(DbContextOption option) : this(DbContextFactory.Create(option))
         {
             this.RepositoryType = option.RepositoryType;
