@@ -217,7 +217,7 @@
     <Compile Include="Features\Common\Bootstrap.cs" />
     <Compile Include="Features\Common\DbContextResolver.cs" />
     <Compile Include="Features\Common\FilesController.cs" />
-    <Compile Include="Features\Common\HelloController.cs" />
+    <Compile Include="Features\Common\UtilitiesController.cs" />
     <Compile Include="Features\Inventory\CategoriesController.cs" />
     <Compile Include="Features\Inventory\UnitOfMeasurementsController.cs" />
     <Compile Include="Features\Security\PermissionsController.cs" />
@@ -270,7 +270,9 @@
     <Content Include="config\configuration.debug.config" />
     <Content Include="config\configuration.release.config" />
     <None Include="Project_Readme.html" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\published.pubxml" />
+    <None Include="Properties\PublishProfiles\tinyerp - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\App.Aggregate\App.Aggregate.csproj">
@@ -305,10 +307,6 @@
       <Project>{6aa214af-9650-4c32-aca2-a4b0bc625289}</Project>
       <Name>App.Event</Name>
     </ProjectReference>
-    <ProjectReference Include="..\App.Order.Api\App.Order.csproj">
-      <Project>{401987e1-3109-4e38-bc81-ecd026e926be}</Project>
-      <Name>App.Order</Name>
-    </ProjectReference>
     <ProjectReference Include="..\App.Query.Entity\App.Query.Entity.csproj">
       <Project>{e99a0615-4f5c-4150-baf6-e6a0475ef180}</Project>
       <Name>App.Query.Entity</Name>
@@ -317,10 +315,6 @@
       <Project>{a7dcff43-ee80-4451-832e-9afe73aa2139}</Project>
       <Name>App.Query.Impl</Name>
     </ProjectReference>
-    <ProjectReference Include="..\App.Query\App.Query.csproj">
-      <Project>{3ca1adb0-a50e-41e1-95eb-2ea6463931c6}</Project>
-      <Name>App.Query</Name>
-    </ProjectReference>
     <ProjectReference Include="..\App.Repository.Impl\App.Repository.Impl.csproj">
       <Project>{c17cf1e1-9b4e-4b53-9493-d2f39ee31a45}</Project>
       <Name>App.Repository.Impl</Name>
@@ -328,38 +322,6 @@
     <ProjectReference Include="..\App.Repository\App.Repository.csproj">
       <Project>{44db0641-ef31-4a87-bde5-fb32a2b6a170}</Project>
       <Name>App.Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\App.Security.Aggregate\App.Security.Aggregate.csproj">
-      <Project>{18732316-6f3a-4806-8eb8-6a8914eaf0d6}</Project>
-      <Name>App.Security.Aggregate</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\App.Security.Command.Impl\App.Security.Command.Impl.csproj">
-      <Project>{673dd1fe-27ce-48f4-b331-c6d40c32baa0}</Project>
-      <Name>App.Security.Command.Impl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\App.Security.Command\App.Security.Command.csproj">
-      <Project>{4a5e5b9e-e56c-4aba-ae52-25549c038514}</Project>
-      <Name>App.Security.Command</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\App.Security.Context\App.Security.Context.csproj">
-      <Project>{332ae2aa-d906-48ad-a6a9-1e628b352411}</Project>
-      <Name>App.Security.Context</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\App.Security.EventHandler.Impl\App.Security.EventHandler.Impl.csproj">
-      <Project>{6890b222-5149-4f69-a1f9-d881301ff963}</Project>
-      <Name>App.Security.EventHandler.Impl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\App.Security.Owin\App.Security.Owin.csproj">
-      <Project>{0f882080-8c67-4bf6-ad24-828310c24cab}</Project>
-      <Name>App.Security.Owin</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\App.Security.Repository.Impl\App.Security.Repository.Impl.csproj">
-      <Project>{4e8c0c7b-59ee-45b8-93de-81fe6de39529}</Project>
-      <Name>App.Security.Repository.Impl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\App.Security.Repository\App.Security.Repository.csproj">
-      <Project>{9a4a2f00-5492-4412-950b-f8290462a648}</Project>
-      <Name>App.Security.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\App.Service.Impl\App.Service.Impl.csproj">
       <Project>{67b29bb8-6aeb-48ee-9328-a4199943fd6a}</Project>
