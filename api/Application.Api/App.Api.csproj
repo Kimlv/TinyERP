@@ -270,8 +270,8 @@
     <Content Include="config\configuration.debug.config" />
     <Content Include="config\configuration.release.config" />
     <None Include="Project_Readme.html" />
-    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
-    <None Include="Properties\PublishProfiles\published.pubxml" />
+    <None Include="Properties\PublishProfiles\RemoteFTP.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\tinyerp - Web Deploy.pubxml" />
   </ItemGroup>
   <ItemGroup>
