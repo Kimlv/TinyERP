@@ -1,3 +1,5 @@
+
+$global:msbuildPath="C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe"
 $msbuildPath="C:\Windows\Microsoft.NET\Framework64\v3.5\MSBuild.exe"
 $root=Resolve-Path ../
 $outputDir="$root\deployment"
@@ -26,6 +28,15 @@ Class BuildAgent{
 			Write-Host "'$($this.OutputFolder)' folder was created ..."
 		}
 	}
+	Building(){
+		$this.BuildProject()
+	#	$this.UploadToRemoteHost()
+	}
+	BuildProject(){
+		Write-Host "Starting building '$($this.FileToBuild)' ..."
+		Invoke-Expression "$($global:msbuildPath) $($this.FileToBuild) /p:OutputPath=$($this.OutputFolder) /p:PublishProfile=FolderProfile"
+		Write-Host "Building '$($this.FileToBuild)' was completed..."
+	}
 	build(){
 		Write-Host "Start building '$($this.FileToBuild)' output to '$($this.OutputFolder)', clearDest: $($this.ClearDest)"
 		if($this.IsValidRequest($this.FileToBuild) -ne  $TRUE){
@@ -33,6 +44,7 @@ Class BuildAgent{
 			return
 		}
 		$this.OnBeforeBuild()
+		$this.Building()
 		Write-Host "Building '$($this.FileToBuild)' was completed."
 	}
 }
@@ -52,6 +64,6 @@ function buildWebApi([string]$sln, [string]$output, [bool]$clearDest){
 
 $webApiSln="D:\project\tfs_tinyerp\api\Application.sln"
 $outputFolder="$outputDir\webapi"
-$cleanFolderBeforeBuild=$FALSE
+$cleanFolderBeforeBuild=$TRUE
 
 buildWebApi $webApiSln $outputFolder $cleanFolderBeforeBuild
