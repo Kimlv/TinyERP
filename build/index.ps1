@@ -1,6 +1,4 @@
 
-# we need to install:
-# PSFTP module
 using module ".\common\enum.psm1"
 using module ".\common\logger\defaultLogger.psm1"
 using module ".\common\helpers\pathHelper.psm1"
@@ -14,18 +12,17 @@ $Global:msbuildPath= [Configuration]::MSBuildPath
 $root= Resolve-Path ../
 $outputDir = "$root\deployment"
 
-$Global:logger = $null
+$Global:logger = [DefaultLogger]::new()
 $Global:FolderSeparator = [Configuration]::FolderSeparator
 $Global:FtpFolderSeparator = [Configuration]::FtpFolderSeparator
 $Global:FtpTimeout = [Configuration]::FtpTimeout
-$global:logger=[DefaultLogger]::new()
 
 $fileToBuild="D:\project\tfs_tinyerp\api\Application.Api\App.Api.csproj"
-$solutionDir="D:\project\tfs_tinyerp\api"
+$solutionDir="D:\project\tfs_tinyerp\api\"
 $buildOutputFolder="$outputDir\webapi"
 $cleanOutputFolderBeforeBuild=$TRUE
 
-[BuildAgent] $buildAgent=[BuildAgent]::new($fileToBuild, $buildOutputFolder, $cleanOutputFolderBeforeBuild)
+[BuildAgent] $buildAgent=[BuildAgent]::new($fileToBuild, $solutionDir, $buildOutputFolder, $cleanOutputFolderBeforeBuild)
 $buildAgent.Build()
 
 # class ActionResult{

@@ -8,11 +8,13 @@ Class BuildAgent{
 	[string]$FileToBuild
 	[string]$OutputFolder
 	[bool]$ClearDest
+	[string] $SolutionDir
 	
-	BuildAgent([string]$fileToBuild, [string]$output, [bool]$clearDest){
-		$this.FileToBuild=$fileToBuild
-		$this.OutputFolder=$output
-		$this.ClearDest=$clearDest
+	BuildAgent([string]$fileToBuild, [string] $solutionDir, [string]$output, [bool]$clearDest){
+		$this.FileToBuild = $fileToBuild
+		$this.OutputFolder = $output
+		$this.ClearDest = $clearDest
+		$this.SolutionDir = $solutionDir
 	}
 	[bool] IsValidRequest([string] $filePath){
 		return [FileHelper]::Exist($filePath)
@@ -42,7 +44,7 @@ Class BuildAgent{
 		#$arguments = @()
 		#$arguments+=('$this.FileToBuild', "/p:DeployOnBuild=true",  "/p:OutputPath=$($this.OutputFolder)", "/p:PublishProfile=FolderProfile")
 		#Invoke-Expression "& '$Global:msbuildPath' $arguments"
-		$cmd = "$($Global:msbuildPath) $($this.FileToBuild) /p:SolutionDir=D:\project\tfs_tinyerp\api /p:DeployOnBuild=true /t:Package /p:PublishProfile=FolderProfile /p:Configuration=Release /p:CreatePackageOnPublish=true "
+		$cmd = "$($Global:msbuildPath) $($this.FileToBuild) /p:SolutionDir=$($this.SolutionDir) /p:DeployOnBuild=true /t:Package /p:PublishProfile=FolderProfile /p:Configuration=Release /p:CreatePackageOnPublish=true "
 		$Global:logger.Write("Running build command '$($cmd)'")
 		# $cmd="C:\Windows\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe D:\project\tfs_tinyerp\api\Application.Api\App.Api.csproj /p:SolutionDir=D:\project\tfs_tinyerp\api /p:DeployOnBuild=true /p:OutputDir=BuildAgent.OutputFolder  /p:OutputPath=D:\project\tfs_tinyerp\deployment\webapi /p:PublishProfile=FolderProfile /p:Configuration=Release"
 		Invoke-Expression $cmd
