@@ -13,3 +13,5 @@ api/.vs/config/applicationhost.config
 deployment/messagebus/
 deployment/
 client/npm-debug.log
+npm-debug.log
+api/Application.sln.cache

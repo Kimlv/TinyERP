@@ -16,7 +16,7 @@ class FTP{
 	Upload([string] $relativePath){
 		$Global:logger.Write("Uploading '$($relativePath)' file...")
 		[string] $localFile = [PathHelper]::Combine($this.LocalWorkingFolder, $relativePath)
-		[string] $remoteFilePath = [PathHelper]::ToFtpPath($relativePath) # [PathHelper]::Combine($this.BasePath, [PathHelper]::ToFtpPath($relativePath), $Global:FtpFolderSeparator)
+		[string] $remoteFilePath = [PathHelper]::ToFtpPath($relativePath)
 		# need to handle response from server and error
 		[System.Net.FtpWebRequest] $FTPRequest = $this.CreateRequest($remoteFilePath, [System.Net.WebRequestMethods+Ftp]::UploadFile)
 		$content = [System.IO.File]::ReadAllBytes($localFile)
@@ -66,7 +66,6 @@ class FTP{
 			[System.Net.FtpWebRequest] $request = $this.CreateRequest($path, [System.Net.WebRequestMethods+Ftp]::MakeDirectory)
 			[System.Net.FtpWebResponse] $response = [System.Net.FtpWebResponse] $request.GetResponse()
 			$response.Close()
-			# [System.IO.Stream] $stream = $response.GetResponseStream()
 			$result.Status = [ActionStatusType]::Success
 		}Catch{
 			# Will handle response later
@@ -102,7 +101,6 @@ class FTP{
 		$FTPRequest.UseBinary = $true 
 		$FTPRequest.KeepAlive = $false
 		$FTPRequest.UsePassive = $true
-		#$FTPRequest.Timeout = $Global:FtpTimeout
 		return $FTPRequest
 	}
 }
