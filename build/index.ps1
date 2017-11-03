@@ -21,7 +21,7 @@ $Global:FtpTimeout = [Configuration]::FtpTimeout
 [string] $solutionDir=$root
 [string] $outputDir = "$($solutionDir)\deployment"
 # path to azure publish profile
-[string] $azureSettingFile="d:\temp\tinyerp.PublishSettings"
+[string] $azureSettingFile="d:\temp\azure\tinyerp.PublishSettings"
 # path to csproj file to build
 [string] $fileToBuild="$($solutionDir)\api\Application.Api\App.Api.csproj"
 # this is where compiled files were stored
