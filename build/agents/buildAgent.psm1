@@ -51,9 +51,6 @@ Class BuildAgent{
 	UploadArtifactsToRemote(){
 		# Config
 		[FTPInformation] $ftpInfo = [FTPInformation]::Load($this.AzurePublishSettingFile)
-		# $UserName = 'tinyerp\$tinyerp'
-		# $Password = "2rFnjrrgKFp6bDsz1xjE35M8RaN8btlpDAfg39Eugi3s7zmdl3qSf2gqxTj1"
-		# $RemoteFolder = "ftp://waws-prod-sn1-113.ftp.azurewebsites.windows.net/site/wwwroot"
 		
 		[FTP] $ftp = [FTP]::new($this.OutputFolder, $ftpInfo.Path, $ftpInfo.UserName, $ftpInfo.Password)
 		$files = [FileHelper]::GetAllFiles($this.OutputFolder)
@@ -71,7 +68,7 @@ Class BuildAgent{
 	Build(){
 		$Global:logger.Write("Start building '$($this.FileToBuild)' output to '$($this.OutputFolder)', clearDest: $($this.ClearDest)")
 		if($this.IsValidRequest($this.FileToBuild) -ne  $TRUE){
-			$Global:logger.Write( "'$($this.FileToBuild)' was not existed. Please specify project to build")
+			$Global:logger.Error( "'$($this.FileToBuild)' was not existed. Please specify project to build")
 			return
 		}
 		$Global:logger.Write("Preparing ...", "cyan")
